@@ -1,0 +1,59 @@
+/*============= Variables =============*/
+:root {
+  --primary-color: #ffb900;
+  --secondary-color: #171100;
+  --content: #5f5b53;
+  --content-on-color: #fff;
+  --line-clamp: ;
+  --background: #2E2100;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "Poppins", sans-serif;
+}
+
+/*============= Common =============*/
+.container {
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Button */
+.btn {
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary-color);
+  padding: ;
+
+  color: var(--content-on-color);
+  font-size: ;
+  font-weight: ;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.secondary-btn {
+  background: var(--secondary-color);
+}
+
+/* Line clamp */
+.line-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: var(--line-clamp, 2);
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
