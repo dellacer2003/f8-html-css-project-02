@@ -2,10 +2,15 @@
 :root {
   --primary-color: #ffb900;
   --secondary-color: #171100;
-  --content: #5f5b53;
+
+  --content: #171100;
+  --desc: #5f5b53;
   --content-on-color: #fff;
+  --content-enable: #5f5b53;
+  --content-active: #171100;
+
   --line-clamp: ;
-  --background: #2E2100;
+  --background: #2e2100;
 }
 
 * {
@@ -23,6 +28,10 @@ body {
 
 /*============= Common =============*/
 .container {
+  width: 117rem;
+  max-width: calc(100% - 2.4rem);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 a {
@@ -32,14 +41,16 @@ a {
 /* Button */
 .btn {
   display: inline-block;
-  align-items: center;
-  justify-content: center;
-  background: var(--primary-color);
-  padding: ;
+  padding: 2.4rem 1rem;
+  min-width: 18rem;
+  border-radius: 3.2rem;
 
+  font-weight: 600;
+  font-size: 1.8rem;
+  text-align: center;
   color: var(--content-on-color);
-  font-size: ;
-  font-weight: ;
+
+  background-color: var(--primary-color);
 }
 
 .btn:hover {
@@ -50,10 +61,86 @@ a {
   background: var(--secondary-color);
 }
 
+.nav-btn {
+  padding: 1.7rem 1rem;
+  min-width: 14.4rem;
+  border-radius: 2.5rem;
+
+  font-weight: 600;
+  font-size: 1.6rem;
+}
+
+.card-btn {
+  padding: 1.7rem 1rem;
+  min-width: 11.8rem;
+  border-radius: 2.5rem;
+
+  font-weight: 600;
+  font-size: 1.6rem;
+}
+
 /* Line clamp */
 .line-clamp {
   display: -webkit-box;
   -webkit-line-clamp: var(--line-clamp, 2);
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+/*============= Header =============*/
+.header {
+  background: #fffcf4;
+}
+
+.fixed {
+  position: sticky;
+  top: -2.8rem;
+}
+
+.header .body {
+  display: flex;
+  align-items: center;
+  padding: 3.6rem 0 0.8rem;
+}
+
+.header .nav {
+  margin-left: auto;
+}
+
+.nav ul {
+  display: flex;
+}
+
+.nav a {
+  position: relative;
+  padding: 0.8rem 2.1rem;
+  font-size: 1.6rem;
+  line-height: 1.75;
+  color: var(--content-enable);
+}
+
+.nav a:hover,
+.nav li.active a {
+  /* font-weight: 600; */
+  text-shadow: 0.8px 0 0 currentColor;
+  color: var(--content);
+}
+
+.nav a:hover::after,
+.nav li.active a::after {
+  position: absolute;
+  left: 2rem;
+  bottom: 0.6rem;
+  display: block;
+
+  content: "";
+  width: 1.2rem;
+  height: 0.2rem;
+  border-radius: 0.1rem;
+
+  background-color: var(--content-active);
+}
+
+.header .btn {
+  margin-left: 7rem;
 }
