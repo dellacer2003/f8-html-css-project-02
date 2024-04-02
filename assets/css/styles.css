@@ -10,7 +10,10 @@
   --content-active: #171100;
 
   --line-clamp: ;
-  --background: #2e2100;
+
+  --background-01: #2e2100;
+  --background-02: #fff;
+  --header-background: #fffcf4;
 }
 
 * {
@@ -19,6 +22,7 @@
 
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -41,7 +45,7 @@ a {
 /* Button */
 .btn {
   display: inline-block;
-  padding: 2.4rem 1rem;
+  padding: 2.3rem 1rem;
   min-width: 18rem;
   border-radius: 3.2rem;
 
@@ -89,7 +93,8 @@ a {
 
 /*============= Header =============*/
 .header {
-  background: #fffcf4;
+  background: var(--header-background);
+  z-index: 1;
 }
 
 .fixed {
@@ -143,4 +148,160 @@ a {
 
 .header .btn {
   margin-left: 7rem;
+}
+
+/*============= Hero =============*/
+.hero {
+  padding-top: 6.4rem;
+  padding-bottom: 6.4rem;
+  background-color: var(--header-background);
+}
+
+.hero .body {
+  display: flex;
+  gap: 23rem;
+}
+
+.hero .left {
+  position: relative;
+}
+
+.left .float-card {
+  position: absolute;
+  bottom: 4.8rem;
+  right: -10rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  padding: 2.8rem 2.4rem;
+  width: 27rem;
+  border-radius: 1.2rem;
+
+  background: var(--background-02);
+  box-shadow: 0px 16px 32px 0px rgba(0, 0, 0, 0.05);
+}
+
+.float-card .item {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.float-card .item img {
+  width: 4.8rem;
+  padding: 1.2rem;
+  border-radius: 50%;
+}
+
+.float-card .item:first-child img {
+  background-color: #fff9e8;
+}
+
+.float-card .item:nth-child(2) img {
+  background-color: #fcefff;
+}
+
+.float-card .item:last-child img {
+  background-color: #ebeaff;
+}
+
+.card-info .course-number {
+  color: var(--desc);
+  font-size: 1.4rem;
+  line-height: 1.85714;
+}
+
+.card-info .course-name {
+  color: var(--content);
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 1.6667;
+}
+
+.hero .hero-img {
+  width: 47rem;
+  height: 68.5rem;
+  object-fit: cover;
+  border-radius: 2rem;
+  object-position: 75% 100%;
+  filter: brightness(92%);
+}
+
+.right .title {
+  color: var(--content);
+  font-family: "Sen";
+  font-size: 5.8rem;
+  font-weight: 700;
+  line-height: 1.17241;
+  letter-spacing: -0.116rem;
+  margin-top: 6.4rem;
+}
+
+.right .desc {
+  color: var(--desc);
+  font-size: 1.8rem;
+  line-height: 1.6667;
+  margin-top: 2.2rem;
+}
+
+.right .action {
+  display: flex;
+  align-items: center;
+  gap: 2.8rem;
+  margin-top: 3.8rem;
+}
+
+.action .demo {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+}
+
+.demo .play-btn {
+  background-color: var(--background-02);
+  padding: 1.2rem 1.5rem;
+  border-radius: 50%;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.07);
+}
+
+.action .label {
+  color: var(--content);
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 1.6667;
+}
+
+.right .stats {
+  margin-top: 4.8rem;
+}
+
+.stats .subtitle {
+  color: var(--desc);
+  font-size: 1.8rem;
+  font-style: normal;
+}
+
+.stats .row,
+.row .figure {
+  display: flex;
+  align-items: baseline;
+}
+
+.stats .row {
+  margin-top: 0.8rem;
+  gap: 2.8rem;
+}
+
+.figure .number {
+  color: var(--content);
+  font-family: Sen;
+  font-size: 4.4rem;
+  font-weight: 700;
+}
+
+.figure .label {
+  color: var(--desc);
+  font-size: 1.8rem;
+  font-style: normal;
 }
