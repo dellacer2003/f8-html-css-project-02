@@ -60,7 +60,7 @@ a {
 }
 
 .btn:hover {
-  background-color: var(--primary-color);
+  opacity: 0.9;
 }
 
 .secondary-btn {
@@ -74,6 +74,10 @@ a {
 
   font-weight: 600;
   font-size: 1.6rem;
+}
+
+.nav-btn:hover {
+  background-color: var(--primary-color);
 }
 
 .card-btn {
