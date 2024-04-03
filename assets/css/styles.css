@@ -326,7 +326,7 @@ a {
   font-style: normal;
 }
 
-/*============= Coourse =============*/
+/*============= Course =============*/
 .courses {
   position: relative;
   padding: 6.5rem 0;
@@ -364,20 +364,28 @@ a {
   gap: 1.8rem;
 }
 
+.pagination button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .pagination .previous {
   width: 4rem;
   height: 4rem;
   border: 1px solid var(--primary-color);
   border-radius: 50%;
-  background: url(../img/arrow-yellow.svg) no-repeat 45% 50%;
+
+  color: var(--primary-color);
 
   cursor: pointer;
+  transition: ease-in-out 150ms;
 }
 
 .pagination .previous:hover {
-  background: url(../img/arrow-white.svg) var(--primary-color) no-repeat 55% 50%;
-  -webkit-transform: scaleX(-1);
-  transform: scaleX(-1);
+  background-color: var(--primary-color);
+
+  color: var(--background-02);
 }
 
 .pagination .next {
@@ -385,17 +393,17 @@ a {
   height: 4rem;
   border: 1px solid var(--primary-color);
   border-radius: 50%;
-  background: url(../img/arrow-yellow.svg) no-repeat 45% 50%;
-  -webkit-transform: scaleX(-1);
-  transform: scaleX(-1);
+
+  color: var(--primary-color);
 
   cursor: pointer;
+  transition: ease-in-out 150ms;
 }
 
 .pagination .next:hover {
-  background: url(../img/arrow-white.svg) var(--primary-color) no-repeat 55% 50%;
-  -webkit-transform: none;
-  transform: none;
+  background-color: var(--primary-color);
+
+  color: var(--background-02);
 }
 
 .courses .card-list {
