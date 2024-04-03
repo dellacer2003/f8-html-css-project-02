@@ -55,10 +55,12 @@ a {
   color: var(--content-on-color);
 
   background-color: var(--primary-color);
+
+  transition: ease-in-out 150ms;
 }
 
 .btn:hover {
-  opacity: 0.9;
+  background-color: var(--primary-color);
 }
 
 .secondary-btn {
@@ -78,9 +80,16 @@ a {
   padding: 1.7rem 1rem;
   min-width: 11.8rem;
   border-radius: 2.5rem;
+  background-color: var(--secondary-color);
 
   font-weight: 600;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
+
+  transition: ease-in-out 150ms;
+}
+
+.card-btn:hover {
+  background-color: var(--primary-color);
 }
 
 /* Line clamp */
@@ -179,7 +188,7 @@ a {
   border-radius: 1.2rem;
 
   background: var(--background-02);
-  box-shadow: 0px 16px 32px 0px rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 16px 32px 0px rgba(0, 0, 0, 0.1);
   transition: ease-in-out 150ms;
 }
 
@@ -269,7 +278,7 @@ a {
   background-color: var(--background-02);
   padding: 1.2rem 1.5rem;
   border-radius: 50%;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.07);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.1);
 }
 
 .action .label {
@@ -311,4 +320,161 @@ a {
   color: var(--desc);
   font-size: 1.8rem;
   font-style: normal;
+}
+
+/*============= Coourse =============*/
+.courses {
+  position: relative;
+  padding: 6.5rem 0;
+  margin-top: 13.5rem;
+}
+
+.courses .body {
+  position: relative;
+}
+
+.courses .title {
+  color: var(--content);
+  font-family: Sen;
+  font-size: 3.8rem;
+  font-weight: 700;
+  line-height: 1.26316;
+  letter-spacing: -0.076rem;
+}
+
+.courses .desc {
+  width: 45.8rem;
+  color: var(--desc);
+  font-size: 1.8rem;
+  line-height: 1.6667;
+  margin-top: 1.6rem;
+}
+
+.courses .pagination {
+  position: absolute;
+  top: 8.4rem;
+  right: 0;
+
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+}
+
+.pagination .previous {
+  width: 4rem;
+  height: 4rem;
+  border: 1px solid var(--primary-color);
+  border-radius: 50%;
+  background: url(/assets/img/arrow-yellow.svg) no-repeat 45% 50%;
+
+  cursor: pointer;
+}
+
+.pagination .previous:hover {
+  background: url(/assets/img/arrow-white.svg) var(--primary-color) no-repeat
+    55% 50%;
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+.pagination .next {
+  width: 4rem;
+  height: 4rem;
+  border: 1px solid var(--primary-color);
+  border-radius: 50%;
+  background: url(/assets/img/arrow-yellow.svg) no-repeat 45% 50%;
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+
+  cursor: pointer;
+}
+
+.pagination .next:hover {
+  background: url(/assets/img/arrow-white.svg) var(--primary-color) no-repeat
+    55% 50%;
+  -webkit-transform: none;
+  transform: none;
+}
+
+.courses .card-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  margin-top: 5.5rem;
+}
+
+.card-list .card {
+  display: flex;
+  flex-direction: column;
+  width: 37rem;
+  border: 1px solid #e2dfda; /* Add variable */
+  border-radius: 1.2rem;
+  transition: ease-in-out 150ms;
+}
+
+.card-list .card:hover {
+  box-shadow: 0px 16px 32px 0px rgba(0, 0, 0, 0.1);
+  scale: 1.05;
+}
+
+.card .course-thumb {
+  width: 37rem;
+  height: 27.8rem;
+  object-fit: cover;
+  object-position: center center;
+  border-radius: 1.2rem 1.2rem 0rem 0rem;
+}
+
+.card .course-info {
+  position: relative;
+  padding: 1.6rem 2.2rem 2.2rem;
+  border-radius: 0rem 0rem 1.2rem 1.2rem;
+
+  background-color: var(--background-02);
+}
+
+.course-info .course-name {
+  color: var(--content);
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 1.6667;
+}
+
+.course-info .rating {
+  position: absolute;
+  right: 2.2rem;
+  top: 1.7rem;
+
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.rating .rate {
+  color: #fea31b; /* Add variable */
+  font-size: 1.6rem;
+  line-height: 1.75;
+}
+
+.course-info .desc {
+  width: 100%;
+  color: var(--desc);
+  font-size: 1.4rem;
+  line-height: 1.85714;
+  margin-top: 0.6rem;
+}
+
+.course-info .row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.2rem;
+}
+
+.row .price {
+  color: var(--content);
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 1.6667;
 }
