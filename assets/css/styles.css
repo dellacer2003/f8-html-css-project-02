@@ -365,14 +365,13 @@ a {
   height: 4rem;
   border: 1px solid var(--primary-color);
   border-radius: 50%;
-  background: url(./assets/img/arrow-yellow.svg) no-repeat 45% 50%;
+  background: url(../img/arrow-yellow.svg) no-repeat 45% 50%;
 
   cursor: pointer;
 }
 
 .pagination .previous:hover {
-  background: url(./assets/img/arrow-white.svg) var(--primary-color) no-repeat
-    55% 50%;
+  background: url(../img/arrow-white.svg) var(--primary-color) no-repeat 55% 50%;
   -webkit-transform: scaleX(-1);
   transform: scaleX(-1);
 }
@@ -382,7 +381,7 @@ a {
   height: 4rem;
   border: 1px solid var(--primary-color);
   border-radius: 50%;
-  background: url(./assets/img/arrow-yellow.svg) no-repeat 45% 50%;
+  background: url(../img/arrow-yellow.svg) no-repeat 45% 50%;
   -webkit-transform: scaleX(-1);
   transform: scaleX(-1);
 
@@ -390,8 +389,7 @@ a {
 }
 
 .pagination .next:hover {
-  background: url(./assets/img/arrow-white.svg) var(--primary-color) no-repeat
-    55% 50%;
+  background: url(../img/arrow-white.svg) var(--primary-color) no-repeat 55% 50%;
   -webkit-transform: none;
   transform: none;
 }
