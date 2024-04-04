@@ -4,8 +4,10 @@
   --secondary-color: #171100;
 
   --content: #171100;
+  --content-on-color-01: #fff;
+  --content-on-color-02: #f7f7f7;
   --desc: #5f5b53;
-  --content-on-color: #fff;
+  --desc-on-color: #bfbcb2;
   --content-enable: #5f5b53;
   --content-active: #171100;
 
@@ -39,7 +41,6 @@ h2 {
   font-family: "Sen";
   font-weight: 700;
   letter-spacing: -0.02em;
-
 }
 
 h1 {
@@ -60,6 +61,8 @@ subtitle {
 }
 
 .container {
+  position: relative;
+
   width: 117rem;
   max-width: calc(100% - 2.4rem);
   margin-left: auto;
@@ -81,7 +84,7 @@ a {
   font-weight: 600;
   font-size: 1.8rem;
   text-align: center;
-  color: var(--content-on-color);
+  color: var(--content-on-color-01);
 
   background-color: var(--primary-color);
 
@@ -128,9 +131,14 @@ a {
 /* Line clamp */
 .line-clamp {
   display: -webkit-box;
-  -webkit-line-clamp: var(--line-clamp, 2);
+  -webkit-line-clamp: var(--line-clamp, 1);
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+/* Word break */
+.word-break-all {
+  word-break: break-all;
 }
 
 /*============= Header =============*/
@@ -150,6 +158,7 @@ a {
   padding: 3.6rem 0 0.8rem;
 }
 
+/* Nav */
 .header .nav {
   margin-left: auto;
 }
@@ -204,10 +213,12 @@ a {
   gap: 23rem;
 }
 
+/* Left */
 .hero .left {
   position: relative;
 }
 
+/* Float card */
 .left .float-card {
   position: absolute;
   bottom: 4.8rem;
@@ -227,8 +238,6 @@ a {
 
 .left .float-card:hover {
   scale: 1.08;
-  /* transform-style: preserve-3d;
-  transform: rotateX(11deg) rotateY(16.5deg); */
 }
 
 .float-card .item {
@@ -261,6 +270,7 @@ a {
   line-height: 1.85714;
 }
 
+/* Hero img */
 .hero .hero-img {
   width: 47rem;
   height: 68.5rem;
@@ -270,6 +280,7 @@ a {
   filter: brightness(92%);
 }
 
+/* Right */
 .right .title {
   margin-top: 6.4rem;
 }
@@ -288,6 +299,7 @@ a {
   margin-top: 3.8rem;
 }
 
+/* Action */
 .action .demo {
   display: flex;
   align-items: center;
@@ -308,6 +320,7 @@ a {
   line-height: 1.6667;
 }
 
+/* Right */
 .right .stats {
   margin-top: 4.8rem;
 }
@@ -349,13 +362,8 @@ a {
 
 /*============= Course =============*/
 .courses {
-  position: relative;
   padding: 6.5rem 0;
   margin-top: 13.5rem;
-}
-
-.courses .body {
-  position: relative;
 }
 
 .courses .desc {
@@ -366,6 +374,7 @@ a {
   margin-top: 1.6rem;
 }
 
+/* Pagination */
 .courses .pagination {
   position: absolute;
   top: 8.4rem;
@@ -418,6 +427,7 @@ a {
   color: var(--background-02);
 }
 
+/* Card list */
 .courses .card-list {
   display: flex;
   align-items: center;
@@ -425,6 +435,7 @@ a {
   margin-top: 5.5rem;
 }
 
+/* Card */
 .card-list .card {
   display: flex;
   flex-direction: column;
@@ -456,11 +467,14 @@ a {
   background-color: var(--background-02);
 }
 
-.course-info .course-name a {
+.course-info subtitle a {
+  padding-right: 6rem;
   color: var(--content);
   font-size: 1.8rem;
   font-weight: 600;
   line-height: 1.6667;
+
+  --line-clamp: 1;
 }
 
 .course-info .rating {
@@ -499,4 +513,91 @@ a {
   font-size: 1.8rem;
   font-weight: 600;
   line-height: 1.6667;
+}
+
+/*============= Feedback =============*/
+#reviews {
+  --percentage: 24vh;
+  padding: var(--percentage) 0;
+  margin-top: calc(20rem - var(--percentage) - 6.5rem);
+}
+
+.feedback {
+  height: 38rem;
+  padding: 9.6rem 0;
+  background-color: var(--background-01);
+}
+
+.feedback .body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Feedback left */
+.feedback .left {
+  width: 15%;
+}
+
+.feedback .frame {
+  width: 7.2rem;
+  height: 7.2rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.feedback .student-profile-img {
+  width: 7.2rem;
+  height: 7.2rem;
+  object-fit: cover;
+  object-position: center -10%;
+
+  transform: scale(2);
+}
+
+.feedback .student-name {
+  font-family: Sen;
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 3.4rem;
+  color: var(--content-on-color-02);
+  margin-top: 1.8rem;
+}
+
+.feedback .title-tag {
+  color: var(--desc-on-color);
+  font-size: 1.4rem;
+  line-height: 1.85714;
+  margin-top: 0.4rem;
+}
+
+.feedback .dots {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 2.4rem;
+}
+
+.dots .dot {
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 0.6rem;
+  background: #634700;
+}
+
+.dots .dot:nth-child(2) {
+  background: var(--primary-color);
+}
+
+/* Feedback right */
+.feedback .right {
+  width: 66%;
+}
+
+.feedback .right blockquote {
+  padding-left: 3rem;
+  color: var(--background-02);
+  font-size: 2.6rem;
+  font-style: italic;
+  line-height: 1.53846;
 }
