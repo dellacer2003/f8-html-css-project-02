@@ -270,6 +270,13 @@ a {
   line-height: 1.85714;
 }
 
+.card-info .course-name {
+  color: var(--content);
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 1.6667;
+}
+
 /* Hero img */
 .hero .hero-img {
   width: 47rem;
