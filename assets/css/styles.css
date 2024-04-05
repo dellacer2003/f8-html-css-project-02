@@ -60,6 +60,11 @@ subtitle {
   line-height: 1.6667;
 }
 
+.desc {
+  color: var(--desc);
+  font-weight: 400;
+}
+
 .container {
   position: relative;
 
@@ -77,15 +82,9 @@ a {
 /* Button */
 .btn {
   display: inline-block;
-  padding: 2.3rem 1rem;
-  min-width: 18rem;
-  border-radius: 3.2rem;
-
-  font-weight: 600;
-  font-size: 1.8rem;
   text-align: center;
-  color: var(--content-on-color-01);
 
+  color: var(--content-on-color-01);
   background-color: var(--primary-color);
 
   transition: ease-in-out 150ms;
@@ -96,10 +95,30 @@ a {
 }
 
 .secondary-btn {
+  display: inline-block;
+  text-align: center;
+
+  color: var(--content-on-color-01);
   background: var(--secondary-color);
+
+  transition: ease-in-out 150ms;
 }
 
-.nav-btn {
+.secondary-btn:hover {
+  background-color: var(--primary-color);
+}
+
+/* Button size */
+.lg {
+  padding: 2.3rem 1rem;
+  min-width: 18rem;
+  border-radius: 3.2rem;
+
+  font-weight: 600;
+  font-size: 1.8rem;
+}
+
+.md {
   padding: 1.7rem 1rem;
   min-width: 14.4rem;
   border-radius: 2.5rem;
@@ -108,24 +127,13 @@ a {
   font-size: 1.6rem;
 }
 
-.nav-btn:hover {
-  background-color: var(--primary-color);
-}
-
-.card-btn {
+.sm {
   padding: 1.7rem 1rem;
   min-width: 11.8rem;
   border-radius: 2.5rem;
-  background-color: var(--secondary-color);
 
   font-weight: 600;
   font-size: 1.4rem;
-
-  transition: ease-in-out 150ms;
-}
-
-.card-btn:hover {
-  background-color: var(--primary-color);
 }
 
 /* Line clamp */
@@ -152,7 +160,7 @@ a {
   top: -2.8rem;
 }
 
-.header .body {
+.header .layout {
   display: flex;
   align-items: center;
   padding: 3.6rem 0 0.8rem;
@@ -197,7 +205,7 @@ a {
   background-color: var(--content-active);
 }
 
-.header .btn {
+.header .secondary-btn {
   margin-left: 7rem;
 }
 
@@ -208,7 +216,7 @@ a {
   background-color: var(--header-background);
 }
 
-.hero .body {
+.hero .layout {
   display: flex;
   gap: 23rem;
 }
@@ -219,7 +227,7 @@ a {
 }
 
 /* Float card */
-.left .float-card {
+.hero .left .float-card {
   position: absolute;
   bottom: 4.8rem;
   right: -10rem;
@@ -236,41 +244,41 @@ a {
   transition: ease-in-out 150ms;
 }
 
-.left .float-card:hover {
+.hero .left .float-card:hover {
   scale: 1.08;
 }
 
-.float-card .item {
+.hero .float-card .item {
   display: flex;
   align-items: center;
   gap: 1.6rem;
 }
 
-.float-card .item img {
+.hero .float-card .item img {
   width: 4.8rem;
   padding: 1.2rem;
   border-radius: 50%;
 }
 
-.float-card .item:first-child img {
+.hero .float-card .item:first-child img {
   background-color: #fff9e8;
 }
 
-.float-card .item:nth-child(2) img {
+.hero .float-card .item:nth-child(2) img {
   background-color: #fcefff;
 }
 
-.float-card .item:last-child img {
+.hero .float-card .item:last-child img {
   background-color: #ebeaff;
 }
 
-.card-info .course-number {
+.hero .card-info .course-number {
   color: var(--desc);
   font-size: 1.4rem;
   line-height: 1.85714;
 }
 
-.card-info .course-name {
+.hero .card-info .course-name {
   color: var(--content);
   font-size: 1.8rem;
   font-weight: 600;
@@ -288,18 +296,18 @@ a {
 }
 
 /* Right */
-.right .title {
+.hero .right .title {
   margin-top: 6.4rem;
 }
 
-.right .desc {
+.hero .right .desc {
   color: var(--desc);
   font-size: 1.8rem;
   line-height: 1.6667;
   margin-top: 2.2rem;
 }
 
-.right .action {
+.hero .right .action {
   display: flex;
   align-items: center;
   gap: 2.8rem;
@@ -307,20 +315,20 @@ a {
 }
 
 /* Action */
-.action .demo {
+.hero .action .demo {
   display: flex;
   align-items: center;
   gap: 1.4rem;
 }
 
-.demo .play-btn {
+.hero .demo .play-btn {
   background-color: var(--background-02);
   padding: 1.2rem 1.5rem;
   border-radius: 50%;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.1);
 }
 
-.action .label {
+.hero .action .label {
   color: var(--content);
   font-size: 1.8rem;
   font-weight: 600;
@@ -328,32 +336,32 @@ a {
 }
 
 /* Right */
-.right .stats {
+.hero .right .stats {
   margin-top: 4.8rem;
 }
 
-.stats .headline {
+.hero .stats .headline {
   color: var(--desc);
   font-size: 1.8rem;
   line-height: 3rem;
 }
 
-.stats .row,
-.row .figure {
+.hero .stats .row,
+.hero .row .figure {
   display: flex;
   align-items: baseline;
 }
 
-.stats .row {
+.hero .stats .row {
   margin-top: 0.8rem;
   gap: 2.8rem;
 }
 
-.row .figure {
+.hero .row .figure {
   gap: 1.4rem;
 }
 
-.figure .number {
+.hero .figure .number {
   color: var(--content);
   font-family: Sen;
   font-size: 4.4rem;
@@ -361,10 +369,9 @@ a {
   font-weight: 700;
 }
 
-.figure .label {
+.hero .figure .label {
   color: var(--desc);
   font-size: 1.8rem;
-  font-style: normal;
 }
 
 /*============= Course =============*/
@@ -392,13 +399,13 @@ a {
   gap: 1.8rem;
 }
 
-.pagination button {
+.courses .pagination button {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.pagination .previous {
+.courses .pagination .previous {
   width: 4rem;
   height: 4rem;
   border: 1px solid var(--primary-color);
@@ -410,13 +417,13 @@ a {
   transition: ease-in-out 150ms;
 }
 
-.pagination .previous:hover {
+.courses .pagination .previous:hover {
   background-color: var(--primary-color);
 
   color: var(--background-02);
 }
 
-.pagination .next {
+.courses .pagination .next {
   width: 4rem;
   height: 4rem;
   border: 1px solid var(--primary-color);
@@ -428,7 +435,7 @@ a {
   transition: ease-in-out 150ms;
 }
 
-.pagination .next:hover {
+.courses .pagination .next:hover {
   background-color: var(--primary-color);
 
   color: var(--background-02);
@@ -443,7 +450,7 @@ a {
 }
 
 /* Card */
-.card-list .card {
+.courses .card-list .card {
   display: flex;
   flex-direction: column;
   border: 1px solid var(--card-border);
@@ -451,13 +458,13 @@ a {
   transition: ease-in-out 150ms;
 }
 
-.card-list .card:hover {
+.courses .card-list .card:hover {
   box-shadow: 0px 16px 32px 0px rgba(0, 0, 0, 0.1);
   border: 1px solid transparent;
   scale: 1.05;
 }
 
-.card .course-thumb {
+.courses .card .course-thumb {
   width: calc(100% + 2px);
   height: 27.8rem;
   margin: -1px;
@@ -466,7 +473,7 @@ a {
   border-radius: 1.2rem 1.2rem 0rem 0rem;
 }
 
-.card .course-info {
+.courses .card .course-info {
   position: relative;
   padding: 1.6rem 2.2rem 2.2rem;
   border-radius: 0rem 0rem 1.2rem 1.2rem;
@@ -474,7 +481,7 @@ a {
   background-color: var(--background-02);
 }
 
-.course-info subtitle a {
+.courses .course-info subtitle a {
   padding-right: 6rem;
   color: var(--content);
   font-size: 1.8rem;
@@ -484,7 +491,7 @@ a {
   --line-clamp: 1;
 }
 
-.course-info .rating {
+.courses .course-info .rating {
   position: absolute;
   right: 2.2rem;
   top: 1.7rem;
@@ -494,13 +501,13 @@ a {
   gap: 0.6rem;
 }
 
-.rating .rate {
+.courses .rating .rate {
   color: #fea31b; /* Add variable */
   font-size: 1.6rem;
   line-height: 1.75;
 }
 
-.course-info .desc {
+.courses .course-info .desc {
   width: 32.6rem;
   color: var(--desc);
   font-size: 1.4rem;
@@ -508,14 +515,14 @@ a {
   margin-top: 0.6rem;
 }
 
-.course-info .row {
+.courses .course-info .row {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-top: 1.2rem;
 }
 
-.row .price {
+.courses .row .price {
   color: var(--content);
   font-size: 1.8rem;
   font-weight: 600;
@@ -596,7 +603,7 @@ a {
   margin-top: 2.4rem;
 }
 
-.dots .dot {
+.feedback .dots .dot {
   width: 0.6rem;
   height: 0.6rem;
   border-radius: 0.6rem;
@@ -604,7 +611,7 @@ a {
   cursor: pointer;
 }
 
-.dot.selected {
+.feedback .dot.selected {
   background: var(--primary-color);
   cursor: default;
 }
@@ -622,4 +629,45 @@ a {
   line-height: 1.53846;
 }
 
-/*============= Feedback =============*/
+/*============= Feature =============*/
+.feature {
+  padding: calc(20rem - 24vh) 0 10rem;
+}
+
+.feature .layout {
+  display: flex;
+  gap: 13rem;
+}
+
+/* Left */
+.feature .left {
+  display: flex;
+  gap: 3rem;
+}
+
+.feature .left img {
+  width: 27rem;
+  height: 40.4rem;
+  border-radius: 1.6rem;
+
+  object-fit: cover;
+}
+
+.feature .left img:first-child {
+  margin-top: 3.4rem;
+}
+
+/* Right */
+.feature .right {
+  margin-top: 5.8rem;
+}
+
+.feature .right .desc {
+  font-size: 1.6rem;
+  line-height: 1.75;
+  margin-top: 1.6rem;
+}
+
+.feature .right .btn {
+  margin-top: 3.2rem;
+}
