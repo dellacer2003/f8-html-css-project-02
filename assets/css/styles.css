@@ -18,6 +18,9 @@
   --background-01: #2e2100;
   --background-02: #fff;
   --header-background: #fffcf4;
+
+  --dot-color-01: #634700;
+  --dot-color-02: #5f5b53;
 }
 
 * {
@@ -54,6 +57,7 @@ h2 {
 }
 
 subtitle {
+  display: block;
   color: var(--content);
   font-size: 1.8rem;
   font-weight: 600;
@@ -134,6 +138,68 @@ a {
 
   font-weight: 600;
   font-size: 1.4rem;
+}
+
+/* Dot */
+.dots {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.dot {
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 0.6rem;
+  cursor: pointer;
+}
+
+.dot.selected {
+  background: var(--primary-color);
+  cursor: default;
+}
+
+/* Card list */
+.card-list {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+/* Card */
+.card-list .card {
+  display: flex;
+  flex-direction: column;
+  transition: ease-in-out 150ms;
+}
+
+.card-list .card:hover {
+  box-shadow: 0px 16px 32px 0px rgba(0, 0, 0, 0.1);
+  scale: 1.05;
+}
+
+.card .card-thumb {
+  width: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.card .card-info {
+  position: relative;
+
+  background-color: var(--background-02);
+}
+
+.card-info subtitle a {
+  color: var(--content);
+
+  --line-clamp: 1;
+}
+
+.card-info .row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 /* Line clamp */
@@ -443,55 +509,39 @@ a {
 
 /* Card list */
 .courses .card-list {
-  display: flex;
-  align-items: center;
-  gap: 3rem;
   margin-top: 5.5rem;
 }
 
 /* Card */
 .courses .card-list .card {
-  display: flex;
-  flex-direction: column;
   border: 1px solid var(--card-border);
   border-radius: 1.2rem;
-  transition: ease-in-out 150ms;
 }
 
 .courses .card-list .card:hover {
-  box-shadow: 0px 16px 32px 0px rgba(0, 0, 0, 0.1);
   border: 1px solid transparent;
-  scale: 1.05;
 }
 
-.courses .card .course-thumb {
+.courses .card .card-thumb {
   width: calc(100% + 2px);
   height: 27.8rem;
   margin: -1px;
-  object-fit: cover;
-  object-position: center center;
   border-radius: 1.2rem 1.2rem 0rem 0rem;
 }
 
-.courses .card .course-info {
-  position: relative;
+.courses .card .card-info {
   padding: 1.6rem 2.2rem 2.2rem;
   border-radius: 0rem 0rem 1.2rem 1.2rem;
-
-  background-color: var(--background-02);
 }
 
-.courses .course-info subtitle a {
+.courses .card-info subtitle a {
   padding-right: 6rem;
-  color: var(--content);
   font-size: 1.8rem;
   font-weight: 600;
   line-height: 1.6667;
-
-  --line-clamp: 1;
 }
 
-.courses .course-info .rating {
+.courses .card-info .rating {
   position: absolute;
   right: 2.2rem;
   top: 1.7rem;
@@ -507,7 +557,7 @@ a {
   line-height: 1.75;
 }
 
-.courses .course-info .desc {
+.courses .card-info .desc {
   width: 32.6rem;
   color: var(--desc);
   font-size: 1.4rem;
@@ -515,10 +565,7 @@ a {
   margin-top: 0.6rem;
 }
 
-.courses .course-info .row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.courses .card-info .row {
   margin-top: 1.2rem;
 }
 
@@ -597,23 +644,11 @@ a {
 }
 
 .feedback .dots {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
   margin-top: 2.4rem;
 }
 
-.feedback .dots .dot {
-  width: 0.6rem;
-  height: 0.6rem;
-  border-radius: 0.6rem;
-  background: #634700;
-  cursor: pointer;
-}
-
-.feedback .dot.selected {
-  background: var(--primary-color);
-  cursor: default;
+.feedback .dots .dot:not(.dot.selected) {
+  background: var(--dot-color-01);
 }
 
 /* Feedback right */
@@ -636,7 +671,8 @@ a {
 
 .feature .layout {
   display: flex;
-  gap: 13rem;
+  align-items: center;
+  gap: 11.1%;
 }
 
 /* Left */
@@ -658,10 +694,6 @@ a {
 }
 
 /* Right */
-.feature .right {
-  margin-top: 5.8rem;
-}
-
 .feature .right .desc {
   font-size: 1.6rem;
   line-height: 1.75;
@@ -670,4 +702,120 @@ a {
 
 .feature .right .btn {
   margin-top: 3.2rem;
+}
+
+/*============= CTA =============*/
+.cta {
+  padding: 10rem 0;
+}
+
+.cta .layout {
+  display: flex;
+  align-items: center;
+  gap: 13rem;
+}
+
+/* Left */
+.cta .left .desc {
+  font-size: 1.6rem;
+  line-height: 1.75;
+  margin-top: 1.6rem;
+}
+
+.cta .left .btn {
+  margin-top: 3.2rem;
+}
+
+/* Right */
+.cta .right img {
+  width: 47rem;
+  height: 44rem;
+  border-radius: 2rem;
+
+  object-fit: cover;
+}
+
+/*============= Blog =============*/
+.blog {
+  margin-top: 10rem;
+  padding: 9.6rem 0;
+  background-color: var(--header-background);
+}
+
+.blog .layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.blog h2 {
+  line-height: 1.26316;
+  letter-spacing: -0.076rem;
+}
+
+.blog .desc {
+  width: 44.8rem;
+  text-align: center;
+  font-size: 1.6rem;
+  line-height: 1.75;
+  margin-top: 1.6rem;
+}
+
+.blog .card-list {
+  margin-top: 5.5rem;
+}
+
+.blog .card {
+  border-radius: 1.6rem;
+  overflow: hidden;
+}
+
+.blog .card-thumb {
+  height: 25rem;
+}
+
+.blog .card-info {
+  padding: 2rem 2rem 2.8rem;
+}
+
+.blog .time {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.blog .time p {
+  color: var(--desc);
+  font-size: 1.4rem;
+  line-height: 1.85714;
+}
+
+.blog .time::after {
+  position: absolute;
+  bottom: -1.2rem;
+
+  content: "";
+  width: 16rem;
+  height: 0.1rem;
+  border-radius: 0.05rem;
+  background: var(--card-border);
+}
+
+.blog subtitle {
+  margin-top: 2.5rem;
+  font-size: 1.6rem;
+  line-height: 1.75;
+}
+
+.blog .secondary-btn {
+  margin-top: 1.2rem;
+}
+
+.blog .dots {
+  margin-top: 3.8rem;
+}
+
+.blog .dots .dot:not(.dot.selected) {
+  background: var(--dot-color-01);
 }
